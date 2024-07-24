@@ -1,0 +1,11 @@
+@mixin section5-ann-styles {
+    background-color: $primary-color;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@function get-bg-clr($index) {
+    $shade-count: length($profile-pics);
+    @return nth($profile-pics, $index % $shade-count + 1);
+}

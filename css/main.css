@@ -98,7 +98,7 @@ body {
 }
 .container .section1__user {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-items: end;
   justify-content: center;
@@ -196,7 +196,7 @@ body {
   grid-row: 1/4;
   padding: 6px 16px;
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: repeat(2, auto) 1fr;
   justify-content: center;
   row-gap: 40px;
   background-color: #be185d;
@@ -204,7 +204,7 @@ body {
 }
 .container .section3__logo {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(2, auto);
   place-items: center;
   -moz-column-gap: 6px;
        column-gap: 6px;

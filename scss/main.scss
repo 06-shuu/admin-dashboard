@@ -1,19 +1,6 @@
-@import "reset", "variables";
+@import "reset", "variables", "config";
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-@mixin section5-ann-styles {
-    background-color: $primary-color;
-    border-radius: 20px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-@function get-bg-clr($index) {
-    $shade-count: length($profile-pics);
-    @return nth($profile-pics, $index % $shade-count + 1);
-}
-
-
 
 * {
     box-sizing: border-box;
@@ -52,7 +39,7 @@ body {
             // place-items: center;
             align-items: center;
 
-            img {
+            img { 
                 justify-self: end;
                 width: 1.5rem;
                 height: 1.5rem;
@@ -68,7 +55,7 @@ body {
 
         &__user {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             align-items: center;
             justify-items: end;
             justify-content: center;
@@ -100,7 +87,6 @@ body {
     .section2 {
         grid-column: 2/4;
         grid-row: 2/3;
-
         display: grid;
         grid-template-columns: repeat(2, auto);
         background-color: $primary-color;
@@ -188,7 +174,7 @@ body {
         grid-row: 1/4;
         padding: 6px 16px;
         display: grid;
-        grid-template-rows: auto auto 1fr;
+        grid-template-rows: repeat(2, auto) 1fr;
         justify-content: center;
         row-gap: 40px;
         background-color: $secondary-color;
@@ -196,7 +182,7 @@ body {
 
         &__logo {
             display: grid;
-            grid-template-columns: auto auto;
+            grid-template-columns: repeat(2, auto);
             place-items: center;
             column-gap: 6px;
 
@@ -217,7 +203,6 @@ body {
                     list-style-type: none;
                     display: flex;
                     flex-direction: row;
-                    // justify-content: center;
                     align-items: center;
                     gap: 15px;
                     padding-bottom: 10px;
