@@ -9,7 +9,7 @@
 **Live demo:** 
 - https://06-shuu.github.io/admin-dashboard
 
-  **used technologies:**
+**used technologies:**
 HTML and SASS
 
 ~ FOR DESKTOP VIEW ONLY ~
