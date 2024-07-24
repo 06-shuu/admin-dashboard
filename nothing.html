@@ -6,16 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empty page</title>
     <link rel="stylesheet" href="">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100vh;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .container {
+            height: 50%;
+            display: grid;
+            justify-items: center;
+            text-align: center;
+        }
+
+        img {
+            width: 15rem;
+            height: 15rem;
+            border-radius: 20px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <img src="./imgs/2.jpg" alt="">
-        <h1>nothing here</h1>
-        <div class="">
-            <h2>Go Back</h2>
-            <a href="index.html">Admin Dashboard</a>
-        </div>
+        <a href="index.html">Go Back</a>
     </div>
 </body>
 
