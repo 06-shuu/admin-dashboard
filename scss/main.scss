@@ -89,7 +89,7 @@ body {
                 justify-self: start;
                 font-weight: bold;
 
-                &:hover{
+                &:hover {
                     font-size: 1.12rem;
                 }
             }
@@ -247,15 +247,6 @@ body {
                     p {
                         font-size: 0.8rem;
                         font-weight: bold;
-
-                        // &:hover {
-                        //     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                        // }
-
-                        // &:active {
-                        //     transform: scale(0.98);
-                        //     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-                        // }
                     }
                 }
             }
@@ -304,7 +295,8 @@ body {
                     width: 1rem;
                     height: 1rem;
                     border-radius: 50%;
-                    &:hover{
+
+                    &:hover {
                         background-color: $bg-color;
                     }
                 }
