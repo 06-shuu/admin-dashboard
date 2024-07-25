@@ -1,4 +1,16 @@
-@mixin section5-ann-styles {
+$primary-color: #fff1f2;
+$secondary-color: #be185d;
+$bg-color: #fecaca;
+$card-color: #be185d;
+$hover-color: #ec4899; 
+$profile-pics: (
+    #d946ef,
+    #a3e635, 
+    #3b82f6,
+    #f97316    
+);
+
+@mixin card-with-shadow {
     background-color: $primary-color;
     border-radius: 20px;
     padding: 10px;

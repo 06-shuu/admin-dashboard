@@ -1,4 +1,4 @@
-@import "reset", "variables", "config";
+@import "reset", "config";
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
@@ -36,10 +36,9 @@ body {
         &__search {
             display: grid;
             grid-template-columns: auto auto;
-            // place-items: center;
             align-items: center;
 
-            img { 
+            img {
                 justify-self: end;
                 width: 1.5rem;
                 height: 1.5rem;
@@ -65,6 +64,13 @@ body {
                 width: 1.5rem;
                 height: 1.5rem;
                 justify-self: end;
+                border-radius: 50%;
+
+                &:hover {
+                    background-color: $bg-color;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                }
             }
 
             .icon {
@@ -73,10 +79,19 @@ body {
                 justify-self: center;
                 border-radius: 50%;
                 background-color: $bg-color;
+
+                &:hover {
+                    background-color: $hover-color;
+                }
             }
 
             p {
                 justify-self: start;
+                font-weight: bold;
+
+                &:hover{
+                    font-size: 1.12rem;
+                }
             }
         }
 
@@ -109,6 +124,10 @@ body {
                 height: 3.2rem;
                 border-radius: 50%;
                 background-color: $bg-color;
+
+                &:hover {
+                    background-color: $hover-color;
+                }
             }
 
             p {
@@ -161,6 +180,9 @@ body {
                         text-decoration: none;
                         color: $primary-color;
 
+                        &:hover {
+                            color: $secondary-color;
+                        }
                     }
                 }
             }
@@ -207,6 +229,15 @@ body {
                     gap: 15px;
                     padding-bottom: 10px;
 
+                    &:hover {
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    }
+
+                    &:active {
+                        transform: scale(0.98);
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                    }
+
                     img {
                         width: 1.2rem;
                         height: 1.2rem;
@@ -217,14 +248,14 @@ body {
                         font-size: 0.8rem;
                         font-weight: bold;
 
-                        &:hover {
-                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                        }
+                        // &:hover {
+                        //     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                        // }
 
-                        &:active {
-                            transform: scale(0.98);
-                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-                        }
+                        // &:active {
+                        //     transform: scale(0.98);
+                        //     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                        // }
                     }
                 }
             }
@@ -236,12 +267,11 @@ body {
     .section4 {
         grid-column: 2/3;
         grid-row: 3/4;
-
         display: grid;
         grid-template-columns: repeat(2, minmax(150px, 1fr));
         grid-auto-rows: max-content;
         gap: 15px;
-        padding: 0 15px;
+        padding: 0 15px 15px 15px;
 
         h2 {
             grid-column: 1/3;
@@ -250,12 +280,14 @@ body {
         }
 
         .card {
+            @include card-with-shadow();
             height: 13rem;
-            background-color: $primary-color;
-            border-radius: 20px;
             border-left: solid 10px $card-color;
-            padding: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+            &:hover {
+                transform: scale(1.009);
+                border-color: $hover-color;
+            }
 
             p {
                 padding-bottom: 20px;
@@ -263,7 +295,7 @@ body {
 
             div {
                 display: grid;
-                grid-template-columns: auto auto auto;
+                grid-template-columns: repeat(3, auto);
                 justify-content: end;
                 align-items: end;
                 gap: 10px;
@@ -271,6 +303,10 @@ body {
                 img {
                     width: 1rem;
                     height: 1rem;
+                    border-radius: 50%;
+                    &:hover{
+                        background-color: $bg-color;
+                    }
                 }
             }
         }
@@ -307,7 +343,11 @@ body {
         }
 
         &__ann {
-            @include section5-ann-styles();
+            @include card-with-shadow();
+
+            &:hover {
+                transform: scale(1.009);
+            }
 
             div {
                 padding: 20px;
@@ -321,15 +361,19 @@ body {
         }
 
         &__trend {
-            @include section5-ann-styles();
-            
+            @include card-with-shadow();
+
+            &:hover {
+                transform: scale(1.009);
+            }
+
             div {
                 display: grid;
-                grid-template-columns: max-content max-content;
-                grid-template-rows: max-content max-content;
+                grid-template-columns: repeat(2, max-content);
+                grid-template-rows: repeat(2, max-content);
                 column-gap: 20px;
                 padding: 10px;
-        
+
                 img {
                     grid-row: 1/3;
                     width: 3rem;
@@ -337,22 +381,26 @@ body {
                     border-radius: 50%;
                     padding: 5px;
                 }
-        
+
                 h3 {
                     font-size: 0.9rem;
                     align-items: end;
                 }
-        
+
                 p {
                     font-size: 0.8rem;
                     align-items: start;
                 }
             }
-        
+
             @for $i from 1 through length($profile-pics) {
                 div:nth-of-type(#{$i}) {
                     img {
                         background-color: nth($profile-pics, $i);
+
+                        &:hover {
+                            background-color: $hover-color;
+                        }
                     }
                 }
             }
